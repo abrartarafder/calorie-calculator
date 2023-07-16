@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<title>Calorie Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+</link>
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+<script src="main.js"></script>
+
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px
+    }
+
+    .my-heading {
+        color: #FFB775;
+    }
+
+    .my-heading-1 {
+        color: #FFB775;
+    }
+
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {
+        width: 120px;
+        background: rgb(77, 65, 34);
+        background: -moz-linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
+        background: linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4d4122", endColorstr="#671f02", GradientType=1);
+    }
+
+    .w3-hover-FFB775:hover {
+        background-color: #FFB775;
+    }
+
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {
+        margin-left: 120px
+    }
+
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {
+        #main {
+            margin-left: 0
+        }
+
+        .container {
+            margin-left: 18px;
+        }
+
+        .container-1 {
+            margin-left: 0px;
+        }
+
+        .w3-mobile-nav {
+            background: rgb(77, 65, 34);
+            background: -moz-linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
+            background: -webkit-linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
+            background: linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4d4122", endColorstr="#671f02", GradientType=1);
+        }
+    }
+
+    body {
+
+        background-color: black;
+
+    }
+
+
+    .calorie-text {
+        margin-top: 20px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000000;
+    }
+
+
+    .header-container {
+        position: relative;
+        text-align: center;
+    }
+
+    .custom-image {
+        position: absolute;
+        /* or "relative" or "fixed" depending on your desired positioning */
+        height: 40px;
+        width: 60px;
+        top: 700px;
+        /* Change the value to set the distance from the top */
+        left: 680px;
+        /* Change the value to set the distance from the left */
+    }
+
+
+    .header-text {
+        top: -600px;
+        position: relative;
+        margin-left: 70px;
+        font-size: 126px;
+        color: #FFB775;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* Optional: Add a shadow to the text */
+    }
+
+    .text-center {
+        /* Center align the text */
+        text-align: center;
+    }
+
+    .card-header {
+        color: #FFB775;
+        font-size: 34px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .btn {
+        color: black;
+        background-color: #FFB775;
+        border-color: #FFB775;
+    }
+
+    .btn:hover {
+        color: #000000;
+        background-color: #ff9100;
+        border-color: #ff9100;
+    }
+
+    .form-control,
+    .form-select,
+    .card,
+    .btn {
+        border-radius: 15px;
+    }
+
+    .form-control,
+    .form-select {
+        background: none;
+        color: #fff;
+    }
+
+    .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 0.75rem center !important;
+        background-size: 16px 12px !important;
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+        width: 23px;
+        height: 23px;
+        display: inline-block;
+        top: 0;
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid #ffffff;
+        overflow: hidden;
+    }
+
+    input[type=checkbox] {
+        border-radius: 3px;
+    }
+
+    input[type=radio] {
+        border-radius: 100%;
+    }
+
+    input[type=checkbox]:checked,
+    input[type=radio]:checked {
+        border: none;
+    }
+
+    input[type=checkbox]:checked:after,
+    input[type=radio]:checked:after {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 900;
+        left: 0;
+        position: absolute;
+        top: 0;
+        font-size: 15px;
+        color: #000;
+        background: #ff9100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        .header-text {
+            top: -900px;
+            position: relative;
+            display: none;
+        }
+
+        .footer p {
+            margin-left: -10px;
+        }
+
+    }
+
+    .card:hover {
+        cursor: pointer;
+    }
+
+    .collapsed {
+        display: none;
+    }
+</style>
+
+
+<body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <a href="#calorie-calc" class="w3-bar-item w3-button w3-padding-large  w3-hover-FFB775">
+            <i class="fa fa-calculator w3-xxlarge"></i>
+            <br>
+            <p class="calorie-text" style="margin-left: -4px;">CALORIE CALCULATOR</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-FFB775">
+            <i class="fa fa-brain w3-xxlarge"></i>
+            <br>
+            <p class="calorie-text" style="margin-left: -4px;">FAQ</p>
+        </a>
+        <a href="#workoutplan" class="w3-bar-item w3-button w3-padding-large w3-hover-FFB775">
+            <i class="fa fa-dumbbell w3-xxlarge"></i>
+            <br>
+            <p class="calorie-text" style="margin-left: -4px;">SAMPLE WORKOUT PLANS</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-mobile-nav w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#calorie-calc" class="w3-bar-item w3-button" style="width:35% !important">CALCULATOR</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">FAQ</a>
+            <a href="#workoutplan" class="w3-bar-item w3-button" style="width:40% !important">WORKOUTS</a>
+        </div>
+    </div>
+
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+
+        <div class="w3-content w3-center w3-text-grey w3-padding-64" id="calorie-calc">
+            <form class="CalculateForm" method="post">
+                <div class="bg-none text-white">
+                    <h4 class="text-center card-header mb-4">Calorie Calculator</h4>
+                    <div class="card-body">
+                        <div class="row g-5">
+                            <div class="col-sm-4">
+                                <div>
+                                    <h5 style="color:#FFB775;">Age*</h5>
+                                    <input class="form-control text-end" name="age" required="" type="number"
+                                        value="25" />
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <h5 style="color:#FFB775;">Gender*</h5>
+                                    <div class="form-control">
+                                        <div class="row">
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input checked="" id="gender_male" name="gender" required=""
+                                                    type="radio" value="0" />
+                                                <label class="ms-2">Male</label>
+                                            </div>
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input id="gender_female" name="gender" required="" type="radio"
+                                                    value="1" />
+                                                <label class="ms-2">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <h5 style="color:#FFB775;">Body Fat*</h5>
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-control text-end" name="bodyFat" required="" type="number"
+                                            value="20" />
+                                        <span class="btn ms-1 bg-warning">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#FFB775;">Height*</h5>
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-control text-end" name="height" required="" type="number"
+                                            value="180" />
+                                        <span class="btn ms-1 bg-warning text-nowrap">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#FFB775;">Weight*</h5>
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-control text-end" name="weight" required="" type="number"
+                                            value="65" />
+                                        <span class="btn ms-1 bg-warning text-nowrap">kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 style="color:#FFB775;">Activity*</h5>
+                                <select class="form-select" name="activity" required="">
+                                    <option value="1">Basal Metabolic Rate (BMR)</option>
+                                    <option value="1.2">Sedentary: little or no exercise</option>
+                                    <option value="1.375">Light: exercise 1-3 times/week</option>
+                                    <option selected="" value="1.465">Moderate: exercise 4-5 times/week</option>
+                                    <option value="1.55">Active: daily exercise or intense exercise 3-4 times/week
+                                    </option>
+                                    <option value="1.725">Very Active: intense exercise 6-7 times/week</option>
+                                    <option value="1.9">Extra Active: very intense exercise daily, or physical job
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#FFB775;">Result Unit*</h5>
+                                    <div class="form-control">
+                                        <div class="row">
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input checked="" id="unit_calories" name="unit" required=""
+                                                    type="radio" value="Calories" />
+                                                <label class="ms-2">Calories</label>
+                                            </div>
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input id="unit_kilo" name="unit" required="" type="radio"
+                                                    value="kilojoules" />
+                                                <label class="ms-2">kilojoules</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#FFB775;">BMR estimation formula*</h5>
+                                    <div class="row g-3">
+                                        <div class="col-sm-12 d-flex align-items-center">
+                                            <input checked="" id="Mifflin_St_Jeor" name="formula" required=""
+                                                type="radio" value="0" />
+                                            <label class="ms-2">Mifflin St Jeor</label>
+                                        </div>
+                                        <div class="col-sm-12 d-flex align-items-center">
+                                            <input id="Revised_Harris_Benedict" name="formula" required="" type="radio"
+                                                value="1" />
+                                            <label class="ms-2">Revised Harris-Benedict</label>
+                                        </div>
+                                        <div class="col-sm-12 d-flex align-items-center">
+                                            <input id="Katch_McArdle" name="formula" required="" type="radio"
+                                                value="2" />
+                                            <label class="ms-2">Katch-McArdle</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ans_calculate"></div>
+                    <div class="text-center mt-4 card-footer">
+                        <button class="btn" onclick="calculateCalorie(this)" type="button">
+                            <i class="fas fa-calculator me-3"></i>
+                            Calculate
+                        </button>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Project Section -->
+        <div class="w3-content w3-center w3-text-grey w3-padding-64" id="about">
+            <h4 class="text-center card-header mb-4">Frequently Asked Questions</h4>
+            <p style="color: white">
+                **Note: Any advice / tips should be followed after further research and findings may VARY. Remember,
+                these answers provide general guidance, and it's always a good idea to consult with a healthcare
+                professional or a certified fitness trainer for personalized advice based on your specific circumstances
+                and goals.**
+            </p>
+            <h3 class="my-heading">What is BMI?</h2>
+                <p style="color: white">
+                    <h7 class="my-heading-1">BMI</h7> stands for <h7 class="my-heading-1">Body Mass Index.</h7> It is a
+                    measurement that is commonly used to assess whether an individual has a healthy body weight in
+                    relation to their height. BMI is calculated by dividing a person's weight in kilograms by the square
+                    of their height in meters.
+
+                    The formula for calculating BMI is as follows:
+
+                    BMI = weight (kg) / height^2 (m^2)
+
+                    The resulting number from the calculation is then categorized into different ranges to determine if
+                    a person is underweight, normal weight, overweight, or obese. Here are the standard BMI categories:
+                    <br>
+                    <br>
+                    <h7 class="my-heading-1">Underweight:</h7> BMI below 18.5
+                    <br>
+                    <h7 class="my-heading-1">Normal weight:</h7> BMI between 18.5 and 24.9
+                    <br>
+                    <h7 class="my-heading-1">Overweight:</h7> BMI between 25 and 29.9
+                    <br>
+                    <h7 class="my-heading-1">Obese:</h7> BMI of 30 or higher
+                    <br>
+                    <br>
+                    While BMI can be a useful initial assessment tool for determining weight status, it has limitations.
+                    It does not take into account factors such as muscle mass, bone density, and distribution of body
+                    fat, which can affect an individual's overall health. Therefore, it's important to consider other
+                    measurements and consult with a healthcare professional for a comprehensive evaluation of health and
+                    weight.
+                </p>
+                <h3 class="my-heading">What is BMR and What do the different formulas mean?</h2>
+                    <p style="color: white">Mifflin St Jeor, Revised Harris-Benedict, and Katch-McArdle are formulas
+                        that help scientists estimate how much energy our bodies need to perform basic functions. We
+                        call this energy Basal Metabolic Rate or BMR.
+
+                        Think of your body like a machine that's always running, even when you're not doing anything.
+                        Just like a car needs fuel to run, your body needs energy to keep working properly.<h7
+                            class="my-heading-1"> BMR is like the amount of fuel your body needs to stay alive and
+                            function.</h7>
+
+                        <br>
+
+                        <br>
+                        <h7 class="my-heading-1">The Mifflin St Jeor formula</h7> takes into account your age, gender,
+                        weight, and height to estimate your BMR. It's considered one of the more accurate formulas
+                        because it considers more factors.
+                        <br>
+                        <br>
+                        <h7 class="my-heading-1">The Revised Harris-Benedict formula</h7> is another way to estimate
+                        BMR. It also looks at your age, gender, weight, and height, but it uses different calculations
+                        compared to the Mifflin St Jeor formula.
+                        <br>
+                        <br>
+                        <h7 class="my-heading-1">The Katch-McArdle formula</h7> is a bit different. It estimates BMR
+                        based on your body composition, specifically your lean body mass. Lean body mass is everything
+                        in your body except for fat. This formula is useful if you know your body fat percentage or if
+                        it has been measured.
+                        <br>
+                        <br>
+                        These formulas help experts estimate how many calories your body needs each day. Knowing your
+                        estimated BMR is important because it helps you understand how much food or energy your body
+                        requires.
+
+                        Remember, these formulas are just estimates, and everyone's body is unique. But they give us a
+                        good starting point to understand our energy needs and make healthy choices.
+                    </p>
+
+
+                    <h3 class="my-heading">How often should one workout?</h2>
+                        <p style="color: white">
+                            The <h7 class="my-heading-1">frequency of your exercise depends on your goals and fitness
+                                level.
+                            </h7> For general health benefits, aim for at least 150 minutes of moderate-intensity
+                            aerobic
+                            exercise or 75 minutes of vigorous-intensity exercise per week. Additionally, include
+                            strength
+                            training exercises two or more days a week.
+                        </p>
+                        <h3 class="my-heading">Cardio or Strength Training?</h2>
+                            <p style="color: white">
+                                <h7 class="my-heading-1">Both </h7>cardio and strength training are important for
+                                overall
+                                fitness. Cardio exercises like running, swimming, or cycling improve cardiovascular
+                                health
+                                and burn calories. Strength training exercises, such as weightlifting, build muscle
+                                strength
+                                and increase metabolism. A balanced fitness routine should include both cardio and
+                                strength
+                                training.
+                            </p>
+                            <h3 class="my-heading">Can fat loss be targetted to specific areas?</h2>
+                                <p style="color: white">
+                                    Spot reduction, the idea of losing fat in specific areas, is a<h7
+                                        class="my-heading-1">
+                                        myth.</h7> When you lose weight, you generally lose it from your entire body
+                                    rather
+                                    than a specific region. To reduce body fat, focus on overall fat loss through a
+                                    combination of regular exercise, a balanced diet, and creating a calorie deficit.
+                                </p>
+
+
+
+
+
+
+        </div>
+        <div class="w3-content w3-center w3-text-grey w3-padding-64" id="workoutplan">
+            <h4 class="text-center card-header mb-4">Sample Workout Plans</h4>
+            <p style="color: white">
+                The workouts are organized by muscle groups and can be combined with other workouts to make a full
+                routine. (For example: Arms 1 and Back 3 can be a Back and Arm day with 3 workouts from Arms 1 and 3
+                workouts from Back)
+            </p>
+            <br>
+            <!-- arms -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                            style="max-width: 18rem; background: none; border-color: #8c592a;">
+                            <div class="card-header">Arms 1</div>
+                            <div class="card-body text" style="color:#FFB775">
+                                <p class="expand-text">Click to expand</p>
+                                <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                    <li>EZ Barbell Curl (3 sets, 10 reps)</li>
+                                    <li>Skull Crusher (3 sets, 12 reps)</li>
+                                    <li>Hammer Curl (3 sets, 8 reps)</li>
+                                    <li>Tricep Pushdown (3 sets, 10 reps)</li>
+                                    <li>Barbell Curl (3 sets, 8 reps)</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                            style="max-width: 18rem; background: none; border-color: #8c592a;">
+                            <div class="card-header">Arms 2</div>
+                            <div class="card-body text" style="color:#FFB775">
+                                <p class="expand-text">Click to expand</p>
+                                <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                    <li>Dumbbell Curl (3 sets, 12 reps)</li>
+                                    <li>Tricep Extension (3 sets, 10 reps)</li>
+                                    <li>EZ Bar Curl (3 sets, 8 reps)</li>
+                                    <li>Tricep Pulldown (3 sets, 12 reps)</li>
+                                    <li>Preacher Curl (3 sets, 10 reps)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                            style="max-width: 18rem; background: none; border-color:  #8c592a;">
+                            <div class="card-header">Arms 3</div>
+                            <div class="card-body text" style="color:#FFB775">
+                                <p class="expand-text">Click to expand</p>
+                                <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                    <li>Incline Dumbbell Curl (3 sets, 12 reps)</li>
+                                    <li>Tricep Pushdown (3 sets, 10 reps)</li>
+                                    <li>Barbell Curl (3 sets, 8 reps)</li>
+                                    <li>Tricep Extension (3 sets, 12 reps)</li>
+                                    <li>Hammer Curl (3 sets, 10 reps)</li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chest -->
+                <div class="container-1">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card border-1 mb-3" onclick="toggleCard(this)"
+                                style="max-width: 18rem; background: none; border-color:#FFB775">
+                                <div class="card-header">Chest 1</div>
+                                <div class="card-body text" style="color:#FFB775">
+                                    <p class="expand-text">Click to expand</p>
+                                    <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                        <li>Barbell bench press 4 sets of 8-12 reps</li>
+                                        <li>Incline dumbbell press 3 sets of 8-12 reps</li>
+                                        <li>Dumbbell flyes 3 sets of 12-15 reps</li>
+                                        <li>Cable crossovers 3 sets of 12-15 reps</li>
+                                        <li>Dips 3 sets of 8-12 reps</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card border-1 mb-3" onclick="toggleCard(this)"
+                                style="max-width: 18rem; background: none; border-color: #FFB775">
+                                <div class="card-header">Chest 2</div>
+                                <div class="card-body text" style="color:#FFB775">
+                                    <p class="expand-text">Click to expand</p>
+                                    <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                        <li>Barbell incline press 4 sets of 8-12 reps</li>
+                                        <li>Decline dumbbell press 3 sets of 8-12 reps</li>
+                                        <li>Inverted rows 3 sets of 12-15 reps</li>
+                                        <li>Dumbbell pullovers 3 sets of 12-15 reps</li>
+                                        <li>Ring push-ups 3 sets of 8-12 reps</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card border-1 mb-3" onclick="toggleCard(this)"
+                                style="max-width: 18rem; background: none; border-color: #FFB775">
+                                <div class="card-header">Chest 3</div>
+                                <div class="card-body text" style="color:#FFB775">
+                                    <p class="expand-text">Click to expand</p>
+                                    <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                        <li>Flat barbell press 4 sets of 8-12 reps</li>
+                                        <li>Incline dumbbell press 3 sets of 8-12 reps</li>
+                                        <li>Dumbbell pullovers 3 sets of 12-15 reps</li>
+                                        <li>Cable crossovers 3 sets of 12-15 reps</li>
+                                        <li>Bodyweight dips 3 sets of 8-12 reps</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- back -->
+                    <div class="container-3">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card border-1 mb-3" onclick="toggleCard(this)"
+                                    style="max-width: 18rem; background: none; border-color:#d1f5ac;">
+                                    <div class="card-header">Back 1</div>
+                                    <div class="card-body text" style="color:#FFB775">
+                                        <p class="expand-text">Click to expand</p>
+                                        <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                            <li>Pull-ups (3 sets of 8-12 reps)</li>
+                                            <li>Bent-over rows (3 sets of 8-12 reps)</li>
+                                            <li>Seated cable rows (3 sets of 8-12 reps)</li>
+                                            <li>Deadlifts (3 sets of 8-12 reps)</li>
+                                            <li>Lat pulldowns (3 sets of 8-12 reps)</li>
+                                        </ul>
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card border-1 mb-3" onclick="toggleCard(this)"
+                                    style="max-width: 18rem; background: none; border-color: #d1f5ac;">
+                                    <div class="card-header">Back 2</div>
+                                    <div class="card-body text" style="color:#FFB775">
+                                        <p class="expand-text">Click to expand</p>
+                                        <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                            <li>Seated cable rows (4 sets of 6-10 reps)</li>
+                                            <li>Deadlifts (4 sets of 6-10 reps)</li>
+                                            <li>Barbell rows (4 sets of 6-10 reps)</li>
+                                            <li>Pulldowns (4 sets of 6-10 reps)</li>
+                                            <li>T-Bar Rows (4 sets of 6-10 reps)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card border-1 mb-3" onclick="toggleCard(this)"
+                                    style="max-width: 18rem; background: none; border-color: #d1f5ac;">
+                                    <div class="card-header">Back 3</div>
+                                    <div class="card-body text" style="color:#FFB775">
+                                        <p class="expand-text">Click to expand</p>
+                                        <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                            <li>Cable pulldowns (3 sets of 8-12 reps)</li>
+                                            <li>Hyperextensions (3 sets of 8-12 reps)</li>
+                                            <li>Lat pulldowns (3 sets of 8-12 reps)</li>
+                                            <li>Renegade rows (3 sets of 8-12 reps)</li>
+                                            <li>Seated cable rows (3 sets of 8-12 reps)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- shoulders-->
+                        <div class="container-4">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                                        style="max-width: 18rem; background: none; border-color: #687654;">
+                                        <div class="card-header">Shoulders 1</div>
+                                        <div class="card-body text" style="color:#FFB775">
+                                            <p class="expand-text">Click to expand</p>
+                                            <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                                <li>Seated Arnold Press (4 sets of 6-10 reps)</li>
+                                                <li>Leaning Lateral Raises (4 sets of 6-10 reps)</li>
+                                                <li>Incline Y raises (4 sets of 6-10 reps)</li>
+                                                <li>Barbell Carry (4 sets of 6-10 reps)</li>
+                                                <li>Single Arm Push Press (4 sets of 6-10 reps)</li>
+                                            </ul>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                                        style="max-width: 18rem; background: none; border-color: #687654;">
+                                        <div class="card-header">Shoulders 2</div>
+                                        <div class="card-body text" style="color:#FFB775">
+                                            <p class="expand-text">Click to expand</p>
+                                            <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                                <li>Standing Dumbbell Press (3 sets of 8-12 reps per arm)</li>
+                                                <li>Barbell Shoulder Press (3 sets of 8-12 reps)</li>
+                                                <li>Cable Lateral Raise (3 sets of 8-12 reps)</li>
+                                                <li>Leaning Shoulder Raises (3 sets of 8-12 reps)</li>
+                                                <li>Seated Row (3 sets of 8-12 reps)</li>
+                                            </ul>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                                        style="max-width: 18rem; background: none; border-color: #687654;">
+                                        <div class="card-header">Shoulders 3</div>
+                                        <div class="card-body text" style="color:#FFB775">
+                                            <p class="expand-text">Click to expand</p>
+                                            <ul class="card-text collapsed" style="color:#FFB775; text-align: left;">
+                                                <li>Alt. Dumbbell Press (3 sets of 8-12 reps per arm)</li>
+                                                <li>Barbell Shoulder Press (3 sets of 8-12 reps)</li>
+                                                <li>Resistance Band Raise (3 sets of 8-12 reps)</li>
+                                                <li>Leaning Shoulder Raises (3 sets of 8-12 reps)</li>
+                                                <li>Seated Row (3 sets of 8-12 reps)</li>
+                                            </ul>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- legs-->
+
+                            <div class="container-5">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                                            style="max-width: 18rem; background: none; border-color: #254530;">
+                                            <div class="card-header">Legs 1</div>
+                                            <div class="card-body text" style="color:#FFB775">
+                                                <p class="expand-text">Click to expand</p>
+                                                <ul class="card-text collapsed"
+                                                    style="color:#FFB775; text-align: left; display: none;">
+                                                    <li>Squat (3 sets of 10 reps)</li>
+                                                    <li>Deadlift (3 sets of 12 reps)</li>
+                                                    <li>Smith Squats (3 sets of 8 reps)</li>
+                                                    <li>Leg Press (3 sets of 10 reps)</li>
+                                                    <li>Leg Extension (3 sets of 8 reps)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-sm-4">
+                                        <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                                            style="max-width: 18rem; background: none; border-color: #254530;">
+                                            <div class="card-header">Legs 2</div>
+                                            <div class="card-body text" style="color:#FFB775">
+                                                <p class="expand-text">Click to expand</p>
+                                                <ul class="card-text collapsed"
+                                                    style="color:#FFB775; text-align: left; display: none;">
+                                                    <li>Smith Squats (3 sets of 12 reps)</li>
+                                                    <li>Leg Press (3 sets of 10 reps)</li>
+                                                    <li>Leg Extension (3 sets of 8 reps)</li>
+                                                    <li>Leg Curl (3 sets of 12 reps)</li>
+                                                    <li>Calf Raise (3 sets of 10 reps)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="card border-2 mb-3" onclick="toggleCard(this)"
+                                            style="max-width: 18rem; background: none; border-color: #254530;">
+                                            <div class="card-header">Legs 3</div>
+                                            <div class="card-body text" style="color:#FFB775">
+                                                <p class="expand-text">Click to expand</p>
+                                                <ul class="card-text collapsed"
+                                                    style="color:#FFB775; text-align: left;">
+                                                    <li>Leg Curl (3 sets of 12 reps)</li>
+                                                    <li>Calf Raise (3 sets of 10 reps)</li>
+                                                    <li>Hip thrusts (3 sets of 8 reps)</li>
+                                                    <li>Romanian Deadlift (3 sets of 12 reps)</li>
+                                                    <li>Single Leg Deadlift (3 sets of 10 reps)</li>
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <footer class="w3-content w3-padding-64 w3-text-grey w3-small">
+                                    <h7 class="text-center card-header mb-4" style="margin-left: -30px; color: grey; font-size: small; font-weight: lighter;">Abrar Tarafder Inc.</h7>
+                                    <!-- End footer -->
+                                </footer>
+                                <!-- END PAGE CONTENT -->
+
+</body>
+
+</html>
