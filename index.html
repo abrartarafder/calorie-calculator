@@ -93,7 +93,7 @@
             margin-left: -10px;
         }
 
-        .text-center-card32{
+        .text-center-card32 {
             margin-right: 30px;
         }
     }
@@ -186,16 +186,26 @@
 
     .form-control,
     .form-select {
-        background: none;
+        background: black;
         color: #fff;
+        
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        background: black;
+        color: #fff;
+        caret-color: #FFB775;
+        
     }
 
     .form-select {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
-        background-repeat: no-repeat !important;
-        background-position: right 0.75rem center !important;
-        background-size: 16px 12px !important;
-    }
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 10px center !important; /* Adjust the value to add space */
+    background-size: 16px 12px !important;
+}
+
 
     input[type=checkbox],
     input[type=radio] {
@@ -296,7 +306,7 @@
                                 <div>
                                     <h5 style="color:#FFB775;">Age*</h5>
                                     <input class="form-control text-end" name="age" required="" type="number"
-                                        value="25" />
+                                        value="25" style="color:#FFB775;" />
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -306,7 +316,7 @@
                                         <div class="row">
                                             <div class="col-6 d-flex align-items-center">
                                                 <input checked="" id="gender_male" name="gender" required=""
-                                                    type="radio" value="0" />
+                                                    type="radio" value="0" style="color:#FFB775;"/>
                                                 <label class="ms-2">Male</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center">
@@ -323,7 +333,7 @@
                                     <h5 style="color:#FFB775;">Body Fat*</h5>
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="bodyFat" required="" type="number"
-                                            value="20" />
+                                            value="20" style="color:#FFB775;" />
                                         <span class="btn ms-1 bg-FFB775">%</span>
                                     </div>
                                 </div>
@@ -333,7 +343,7 @@
                                     <h5 style="color:#FFB775;">Height*</h5>
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="height" required="" type="number"
-                                            value="180" />
+                                            value="180" style="color:#FFB775;"/>
                                         <span class="btn ms-1 bg-FFB775 text-nowrap">cm</span>
                                     </div>
                                 </div>
@@ -343,15 +353,15 @@
                                     <h5 style="color:#FFB775;">Weight*</h5>
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="weight" required="" type="number"
-                                            value="65" />
+                                            value="65" style="color:#FFB775;"/>
                                         <span class="btn ms-1 bg-FFB775 text-nowrap">kg</span>
                                     </div>
                                 </div>
                             </div>
                             <div>
                                 <h5 style="color:#FFB775;">Activity*</h5>
-                                <select class="form-select" name="activity" required="">
-                                    <option value="1">Basal Metabolic Rate (BMR)</option>
+                                <select class="form-select" name="activity" required="" style="color:#FFB775;">
+                                    <option value="1">Basal Metabolic Rate (BMR) </option>
                                     <option value="1.2">Sedentary: little or no exercise</option>
                                     <option value="1.375">Light: exercise 1-3 times/week</option>
                                     <option selected="" value="1.465">Moderate: exercise 4-5 times/week</option>
