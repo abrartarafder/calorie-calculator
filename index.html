@@ -82,6 +82,20 @@
             background: linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4d4122", endColorstr="#671f02", GradientType=1);
         }
+
+        .header-text {
+            top: -900px;
+            position: relative;
+            display: none;
+        }
+
+        .footer p {
+            margin-left: -10px;
+        }
+
+        .text-center-card32{
+            margin-right: 30px;
+        }
     }
 
     body {
@@ -158,9 +172,9 @@
     }
 
     .btn:hover {
-        color: #000000;
-        background-color: #ff9100;
-        border-color: #ff9100;
+        color: black;
+        background-color: #FFB775;
+        border-color: #FFB775;
     }
 
     .form-control,
@@ -220,26 +234,12 @@
         top: 0;
         font-size: 15px;
         color: #000;
-        background: #ff9100;
+        background: #FFB775;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         height: 100%;
-    }
-
-
-    @media only screen and (max-width: 600px) {
-        .header-text {
-            top: -900px;
-            position: relative;
-            display: none;
-        }
-
-        .footer p {
-            margin-left: -10px;
-        }
-
     }
 
     .card:hover {
@@ -324,7 +324,7 @@
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="bodyFat" required="" type="number"
                                             value="20" />
-                                        <span class="btn ms-1 bg-warning">%</span>
+                                        <span class="btn ms-1 bg-FFB775">%</span>
                                     </div>
                                 </div>
                             </div>
@@ -334,7 +334,7 @@
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="height" required="" type="number"
                                             value="180" />
-                                        <span class="btn ms-1 bg-warning text-nowrap">cm</span>
+                                        <span class="btn ms-1 bg-FFB775 text-nowrap">cm</span>
                                     </div>
                                 </div>
                             </div>
@@ -344,7 +344,7 @@
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="weight" required="" type="number"
                                             value="65" />
-                                        <span class="btn ms-1 bg-warning text-nowrap">kg</span>
+                                        <span class="btn ms-1 bg-FFB775 text-nowrap">kg</span>
                                     </div>
                                 </div>
                             </div>
@@ -405,18 +405,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ans_calculate"></div>
+                    <div class="text-center-card32">
+                        <div class="ans_calculate"></div>
+                    </div>
                     <div class="text-center mt-4 card-footer">
                         <button class="btn" onclick="calculateCalorie(this)" type="button">
                             <i class="fas fa-calculator me-3"></i>
                             Calculate
                         </button>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                     </div>
+
                 </div>
             </form>
         </div>
@@ -540,7 +538,7 @@
             <p style="color: white">
                 The workouts are organized by muscle groups and can be combined with other workouts to make a full
                 routine. (For example: Arms 1 and Back 3 can be a Back and Arm day with 3 workouts from Arms 1 and 3
-                workouts from Back)
+                workouts from Back 3)
             </p>
             <br>
             <!-- arms -->
@@ -831,7 +829,9 @@
 
 
                                 <footer class="w3-content w3-padding-64 w3-text-grey w3-small">
-                                    <h7 class="text-center card-header mb-4" style="margin-left: -30px; color: grey; font-size: small; font-weight: lighter;">Abrar Tarafder Inc.</h7>
+                                    <h7 class="text-center card-header mb-4"
+                                        style="margin-left: -30px; color: grey; font-size: small; font-weight: lighter;">
+                                        Abrar Tarafder Inc.</h7>
                                     <!-- End footer -->
                                 </footer>
                                 <!-- END PAGE CONTENT -->
