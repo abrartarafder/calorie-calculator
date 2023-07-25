@@ -199,6 +199,11 @@
         
     }
 
+    .imperial-12 {
+    caret-color: #f1fb97; /* Set the caret color to green for elements with the class "imperial" */
+}
+
+
     .form-select {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
     background-repeat: no-repeat !important;
@@ -206,51 +211,59 @@
     background-size: 16px 12px !important;
 }
 
+input[type=checkbox],
+input[type=radio] {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    top: 0;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #ffffff;
+    overflow: hidden;
+}
 
-    input[type=checkbox],
-    input[type=radio] {
-        width: 23px;
-        height: 23px;
-        display: inline-block;
-        top: 0;
-        position: relative;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 1px solid #ffffff;
-        overflow: hidden;
-    }
+input[type=checkbox] {
+    border-radius: 3px;
+}
 
-    input[type=checkbox] {
-        border-radius: 3px;
-    }
+input[type=radio] {
+    border-radius: 100%;
+}
 
-    input[type=radio] {
-        border-radius: 100%;
-    }
+input[type=checkbox]:checked,
+input[type=radio]:checked {
+    border: none;
+}
 
-    input[type=checkbox]:checked,
-    input[type=radio]:checked {
-        border: none;
-    }
+input[type=checkbox]:checked:after,
+input[type=radio]:checked:after {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    left: 0;
+    position: absolute;
+    top: 0;
+    font-size: 15px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 
-    input[type=checkbox]:checked:after,
-    input[type=radio]:checked:after {
-        content: "\f00c";
-        font-family: "Font Awesome 5 Pro";
-        font-weight: 900;
-        left: 0;
-        position: absolute;
-        top: 0;
-        font-size: 15px;
-        color: #000;
-        background: #FFB775;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    }
+/* Custom styles for the Imperial checkbox */
+.imperial-checkbox:checked:after {
+    background: #f1fb97;
+}
+
+/* Custom styles for the Metric checkbox */
+.metric-checkbox:checked:after {
+    background: #FFB775;
+}
 
     .card:hover {
         cursor: pointer;
@@ -259,6 +272,18 @@
     .collapsed {
         display: none;
     }
+
+   .bg-green{
+    background-color: #d1f5ac;
+    border-color: #d1f5ac;
+
+   }
+   .bg-green:hover{
+    background-color: #b0ed73;
+    border-color: #b0ed73;
+
+   }
+    
 </style>
 
 
@@ -269,7 +294,12 @@
         <a href="#calorie-calc" class="w3-bar-item w3-button w3-padding-large  w3-hover-FFB775">
             <i class="fa fa-calculator w3-xxlarge"></i>
             <br>
-            <p class="calorie-text" style="margin-left: -4px;">CALORIE CALCULATOR</p>
+            <p class="calorie-text" style="margin-left: -4px;">CALORIE CALCULATOR METRIC</p>
+        </a>
+        <a href="#calorie-calc-2" class="w3-bar-item w3-button w3-padding-large  w3-hover-FFB775">
+            <i class="fa fa-calculator w3-xxlarge"></i>
+            <br>
+            <p class="calorie-text" style="margin-left: -4px;">CALORIE CALCULATOR IMPERIAL</p>
         </a>
         <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-FFB775">
             <i class="fa fa-brain w3-xxlarge"></i>
@@ -286,9 +316,10 @@
     <!-- Navbar on small screens (Hidden on medium and large screens) -->
     <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
         <div class="w3-bar w3-mobile-nav w3-opacity w3-hover-opacity-off w3-center w3-small">
-            <a href="#calorie-calc" class="w3-bar-item w3-button" style="width:35% !important">CALCULATOR</a>
-            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">FAQ</a>
-            <a href="#workoutplan" class="w3-bar-item w3-button" style="width:40% !important">WORKOUTS</a>
+            <a href="#calorie-calc" class="w3-bar-item w3-button" style="width: 30% !important">MCALCULATOR</a>
+            <a href="#calorie-calc-2" class="w3-bar-item w3-button" style="width: 30% !important">ICALCULATOR</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:13% !important">FAQ</a>
+            <a href="#workoutplan" class="w3-bar-item w3-button" style="width:25% !important">WORKOUTS</a>
         </div>
     </div>
 
@@ -299,7 +330,12 @@
         <div class="w3-content w3-center w3-text-grey w3-padding-64" id="calorie-calc">
             <form class="CalculateForm" method="post">
                 <div class="bg-none text-white">
-                    <h4 class="text-center card-header mb-4">Calorie Calculator</h4>
+                    <h4 class="text-center card-header mb-4">Calorie Calculator (Metric)</h4>
+                    <p style="color: white">
+                        **Note: This is the Metric Calculator -- the Imperial Calculator (lbs, feet and inches) is below this**
+                    </p>
+                    <br>
+                    <br>
                     <div class="card-body">
                         <div class="row g-5">
                             <div class="col-sm-4">
@@ -316,12 +352,12 @@
                                         <div class="row">
                                             <div class="col-6 d-flex align-items-center">
                                                 <input checked="" id="gender_male" name="gender" required=""
-                                                    type="radio" value="0" style="color:#FFB775;"/>
+                                                    type="radio" value="0" style="color:#FFB775;" class="metric-checkbox"/>
                                                 <label class="ms-2">Male</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center">
                                                 <input id="gender_female" name="gender" required="" type="radio"
-                                                    value="1" />
+                                                    value="1" class="metric-checkbox"/>
                                                 <label class="ms-2">Female</label>
                                             </div>
                                         </div>
@@ -378,13 +414,13 @@
                                     <div class="form-control">
                                         <div class="row">
                                             <div class="col-6 d-flex align-items-center">
-                                                <input checked="" id="unit_calories" name="unit" required=""
+                                                <input checked="" class="metric-checkbox"id="unit_calories" name="unit" required=""
                                                     type="radio" value="Calories" />
                                                 <label class="ms-2">Calories</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center">
                                                 <input id="unit_kilo" name="unit" required="" type="radio"
-                                                    value="kilojoules" />
+                                                    value="kilojoules" class="metric-checkbox" />
                                                 <label class="ms-2">kilojoules</label>
                                             </div>
                                         </div>
@@ -397,17 +433,17 @@
                                     <div class="row g-3">
                                         <div class="col-sm-12 d-flex align-items-center">
                                             <input checked="" id="Mifflin_St_Jeor" name="formula" required=""
-                                                type="radio" value="0" />
+                                                type="radio" value="0" class="metric-checkbox" />
                                             <label class="ms-2">Mifflin St Jeor</label>
                                         </div>
                                         <div class="col-sm-12 d-flex align-items-center">
                                             <input id="Revised_Harris_Benedict" name="formula" required="" type="radio"
-                                                value="1" />
+                                                value="1" class="metric-checkbox" />
                                             <label class="ms-2">Revised Harris-Benedict</label>
                                         </div>
                                         <div class="col-sm-12 d-flex align-items-center">
                                             <input id="Katch_McArdle" name="formula" required="" type="radio"
-                                                value="2" />
+                                                value="2" class="metric-checkbox"/>
                                             <label class="ms-2">Katch-McArdle</label>
                                         </div>
                                     </div>
@@ -428,6 +464,145 @@
                 </div>
             </form>
         </div>
+
+        <div class="w3-content w3-center w3-text-grey w3-padding-64" id="calorie-calc-2">
+            <form class="CalculateForm" method="post">
+                <div class="bg-none text-white">
+                    <h4 class="text-center card-header mb-4" style="color: #f1fb97;">Calorie Calculator (Imperial)</h4>
+                    <div class="card-body">
+                        <div class="row g-5">
+                            <div class="col-sm-4">
+                                <div>
+                                    <h5 style="color:#f1fb97;">Age*</h5>
+                                    <input class="form-control text-end" name="age2" required="" type="number"
+                                        value="25" style="color:#f1fb97; caret-color:#d1f5ac;" />
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <h5 style="color:#f1fb97;">Gender*</h5>
+                                    <div class="form-control imperial">
+                                        <div class="row">
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input checked="" id="gender_male" name="gender2" required=""
+                                                    type="radio"  class="imperial-checkbox imperial" value="0"/>
+                                                <label class="ms-2">Male</label>
+                                            </div>
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input id="gender_female" name="gender2" required="" type="radio"
+                                                    value="1" class="imperial-checkbox imperial"/>
+                                                <label class="ms-2">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <h5 style="color:#f1fb97;">Body Fat*</h5>
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-control text-end" name="bodyFat2" required="" type="number"
+                                            value="20" style="color:#f1fb97; caret-color:#d1f5ac;" />
+                                        <span class="btn ms-1 bg-green">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#f1fb97; caret-color:#d1f5ac;">Height (feet and inches)*</h5>
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-control text-end" name="height_feet2" required="" type="number" value="5" style="color:#f1fb97; caret-color:#d1f5ac;" />
+                                        <span class="btn ms-1 bg-green text-nowrap">ft</span>
+                                        <input class="form-control text-end ms-2" name="height_inches2" required="" type="number" value="10" style="color:#f1fb97; caret-color:#d1f5ac;" />
+                                        <span class="btn ms-1 bg-green text-nowrap">inches</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#f1fb97;">Weight (lbs)*</h5>
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-control text-end" name="weight2" required="" type="number"
+                                            value="165" style="color:#f1fb97; caret-color:#d1f5ac;"/>
+                                        <span class="btn ms-1 text-nowrap bg-green" style="background: f1fb97;">lbs</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 style="color:#f1fb97;">Activity*</h5>
+                                <select class="form-select" name="activity" required="" style="color:#ffffff;">
+                                    <option value="1">Basal Metabolic Rate (BMR) </option>
+                                    <option value="1.2">Sedentary: little or no exercise</option>
+                                    <option value="1.375">Light: exercise 1-3 times/week</option>
+                                    <option selected="" value="1.465">Moderate: exercise 4-5 times/week</option>
+                                    <option value="1.55">Active: daily exercise or intense exercise 3-4 times/week
+                                    </option>
+                                    <option value="1.725">Very Active: intense exercise 6-7 times/week</option>
+                                    <option value="1.9">Extra Active: very intense exercise daily, or physical job
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#f1fb97;">Result Unit*</h5>
+                                    <div class="form-control">
+                                        <div class="row">
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input checked="" id="unit_calories" name="unit" required=""
+                                                    type="radio" value="Calories" class="imperial-checkbox" />
+                                                <label class="ms-2">Calories</label>
+                                            </div>
+                                            <div class="col-6 d-flex align-items-center">
+                                                <input id="unit_kilo" name="unit" required="" type="radio"
+                                                    value="kilojoules" class="imperial-checkbox" />
+                                                <label class="ms-2">kilojoules</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <h5 style="color:#f1fb97;">BMR estimation formula*</h5>
+                                    <div class="row g-3">
+                                        <div class="col-sm-12 d-flex align-items-center">
+                                            <input checked="" id="Mifflin_St_Jeor" name="formula" required=""
+                                                type="radio" value="0" class="imperial-checkbox" />
+                                            <label class="ms-2">Mifflin St Jeor</label>
+                                        </div>
+                                        <div class="col-sm-12 d-flex align-items-center">
+                                            <input id="Revised_Harris_Benedict" name="formula" required="" type="radio"
+                                                value="1" class="imperial-checkbox"/>
+                                            <label class="ms-2">Revised Harris-Benedict</label>
+                                        </div>
+                                        <div class="col-sm-12 d-flex align-items-center">
+                                            <input id="Katch_McArdle" name="formula" required="" type="radio"
+                                                value="2" class="imperial-checkbox" />
+                                            <label class="ms-2">Katch-McArdle</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center-card32">
+                        <div class="ans2_calculate"></div>
+                    </div>
+                    <div class="text-center mt-4 card-footer">
+                        <button class="btn" style="background-color: #f1fb97; border-color: #f1fb97; transition: background-color 0.3s, border-color 0.3s;" onmouseover="this.style.backgroundColor='#e1f46b'; this.style.borderColor='#e1f46b';" onmouseout="this.style.backgroundColor='#f1fb97'; this.style.borderColor='#f1fb97';" onclick="calculateCalorie2(this)" type="button">
+                            <i class="fas fa-calculator me-3"></i>
+                            Calculate
+                        </button>
+                    </div>
+                    
+
+                </div>
+            </form>
+        </div>
+
+
+
+
         <!-- Project Section -->
         <div class="w3-content w3-center w3-text-grey w3-padding-64" id="about">
             <h4 class="text-center card-header mb-4">Frequently Asked Questions</h4>
