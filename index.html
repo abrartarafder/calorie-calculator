@@ -115,6 +115,20 @@
         background: #000000;
     }
 
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+
+
+    th, td {
+    border: 1px solid #8b8b8b;
+    text-align: left;
+    padding: 8px;
+  }
+
+
 
     .header-container {
         position: relative;
@@ -188,7 +202,7 @@
     .form-select {
         background: black;
         color: #fff;
-        
+
     }
 
     .form-control:focus,
@@ -196,74 +210,76 @@
         background: black;
         color: #fff;
         caret-color: #FFB775;
-        
+
     }
 
     .imperial-12 {
-    caret-color: #f1fb97; /* Set the caret color to green for elements with the class "imperial" */
-}
+        caret-color: #f1fb97;
+        /* Set the caret color to green for elements with the class "imperial" */
+    }
 
 
     .form-select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
-    background-repeat: no-repeat !important;
-    background-position: right 10px center !important; /* Adjust the value to add space */
-    background-size: 16px 12px !important;
-}
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 10px center !important;
+        /* Adjust the value to add space */
+        background-size: 16px 12px !important;
+    }
 
-input[type=checkbox],
-input[type=radio] {
-    width: 23px;
-    height: 23px;
-    display: inline-block;
-    top: 0;
-    position: relative;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 1px solid #ffffff;
-    overflow: hidden;
-}
+    input[type=checkbox],
+    input[type=radio] {
+        width: 23px;
+        height: 23px;
+        display: inline-block;
+        top: 0;
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid #ffffff;
+        overflow: hidden;
+    }
 
-input[type=checkbox] {
-    border-radius: 3px;
-}
+    input[type=checkbox] {
+        border-radius: 3px;
+    }
 
-input[type=radio] {
-    border-radius: 100%;
-}
+    input[type=radio] {
+        border-radius: 100%;
+    }
 
-input[type=checkbox]:checked,
-input[type=radio]:checked {
-    border: none;
-}
+    input[type=checkbox]:checked,
+    input[type=radio]:checked {
+        border: none;
+    }
 
-input[type=checkbox]:checked:after,
-input[type=radio]:checked:after {
-    content: "\f00c";
-    font-family: "Font Awesome 5 Pro";
-    font-weight: 900;
-    left: 0;
-    position: absolute;
-    top: 0;
-    font-size: 15px;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
+    input[type=checkbox]:checked:after,
+    input[type=radio]:checked:after {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 900;
+        left: 0;
+        position: absolute;
+        top: 0;
+        font-size: 15px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
 
-/* Custom styles for the Imperial checkbox */
-.imperial-checkbox:checked:after {
-    background: #f1fb97;
-}
+    /* Custom styles for the Imperial checkbox */
+    .imperial-checkbox:checked:after {
+        background: #f1fb97;
+    }
 
-/* Custom styles for the Metric checkbox */
-.metric-checkbox:checked:after {
-    background: #FFB775;
-}
+    /* Custom styles for the Metric checkbox */
+    .metric-checkbox:checked:after {
+        background: #FFB775;
+    }
 
     .card:hover {
         cursor: pointer;
@@ -273,17 +289,17 @@ input[type=radio]:checked:after {
         display: none;
     }
 
-   .bg-green{
-    background-color: #d1f5ac;
-    border-color: #d1f5ac;
+    .bg-green {
+        background-color: #d1f5ac;
+        border-color: #d1f5ac;
 
-   }
-   .bg-green:hover{
-    background-color: #b0ed73;
-    border-color: #b0ed73;
+    }
 
-   }
-    
+    .bg-green:hover {
+        background-color: #b0ed73;
+        border-color: #b0ed73;
+
+    }
 </style>
 
 
@@ -332,7 +348,8 @@ input[type=radio]:checked:after {
                 <div class="bg-none text-white">
                     <h4 class="text-center card-header mb-4">Calorie Calculator (Metric)</h4>
                     <p style="color: white">
-                        **Note: This is the Metric Calculator -- the Imperial Calculator (lbs, feet and inches) is below this**
+                        **Note: This is the Metric Calculator -- the Imperial Calculator (lbs, feet and inches) is below
+                        this**
                     </p>
                     <br>
                     <br>
@@ -341,8 +358,8 @@ input[type=radio]:checked:after {
                             <div class="col-sm-4">
                                 <div>
                                     <h5 style="color:#FFB775;">Age*</h5>
-                                    <input class="form-control text-end" name="age" required="" type="number"
-                                        value="25" style="color:#FFB775;" />
+                                    <input class="form-control text-end" name="age" required="" type="number" value="25"
+                                        style="color:#FFB775;" />
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -352,12 +369,13 @@ input[type=radio]:checked:after {
                                         <div class="row">
                                             <div class="col-6 d-flex align-items-center">
                                                 <input checked="" id="gender_male" name="gender" required=""
-                                                    type="radio" value="0" style="color:#FFB775;" class="metric-checkbox"/>
+                                                    type="radio" value="0" style="color:#FFB775;"
+                                                    class="metric-checkbox" />
                                                 <label class="ms-2">Male</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center">
                                                 <input id="gender_female" name="gender" required="" type="radio"
-                                                    value="1" class="metric-checkbox"/>
+                                                    value="1" class="metric-checkbox" />
                                                 <label class="ms-2">Female</label>
                                             </div>
                                         </div>
@@ -379,7 +397,7 @@ input[type=radio]:checked:after {
                                     <h5 style="color:#FFB775;">Height*</h5>
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="height" required="" type="number"
-                                            value="180" style="color:#FFB775;"/>
+                                            value="180" style="color:#FFB775;" />
                                         <span class="btn ms-1 bg-FFB775 text-nowrap">cm</span>
                                     </div>
                                 </div>
@@ -389,7 +407,7 @@ input[type=radio]:checked:after {
                                     <h5 style="color:#FFB775;">Weight*</h5>
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="weight" required="" type="number"
-                                            value="65" style="color:#FFB775;"/>
+                                            value="65" style="color:#FFB775;" />
                                         <span class="btn ms-1 bg-FFB775 text-nowrap">kg</span>
                                     </div>
                                 </div>
@@ -414,8 +432,8 @@ input[type=radio]:checked:after {
                                     <div class="form-control">
                                         <div class="row">
                                             <div class="col-6 d-flex align-items-center">
-                                                <input checked="" class="metric-checkbox"id="unit_calories" name="unit" required=""
-                                                    type="radio" value="Calories" />
+                                                <input checked="" class="metric-checkbox" id="unit_calories" name="unit"
+                                                    required="" type="radio" value="Calories" />
                                                 <label class="ms-2">Calories</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center">
@@ -442,8 +460,8 @@ input[type=radio]:checked:after {
                                             <label class="ms-2">Revised Harris-Benedict</label>
                                         </div>
                                         <div class="col-sm-12 d-flex align-items-center">
-                                            <input id="Katch_McArdle" name="formula" required="" type="radio"
-                                                value="2" class="metric-checkbox"/>
+                                            <input id="Katch_McArdle" name="formula" required="" type="radio" value="2"
+                                                class="metric-checkbox" />
                                             <label class="ms-2">Katch-McArdle</label>
                                         </div>
                                     </div>
@@ -485,12 +503,12 @@ input[type=radio]:checked:after {
                                         <div class="row">
                                             <div class="col-6 d-flex align-items-center">
                                                 <input checked="" id="gender_male" name="gender2" required=""
-                                                    type="radio"  class="imperial-checkbox imperial" value="0"/>
+                                                    type="radio" class="imperial-checkbox imperial" value="0" />
                                                 <label class="ms-2">Male</label>
                                             </div>
                                             <div class="col-6 d-flex align-items-center">
                                                 <input id="gender_female" name="gender2" required="" type="radio"
-                                                    value="1" class="imperial-checkbox imperial"/>
+                                                    value="1" class="imperial-checkbox imperial" />
                                                 <label class="ms-2">Female</label>
                                             </div>
                                         </div>
@@ -511,9 +529,11 @@ input[type=radio]:checked:after {
                                 <div>
                                     <h5 style="color:#f1fb97; caret-color:#d1f5ac;">Height (feet and inches)*</h5>
                                     <div class="d-flex align-items-center">
-                                        <input class="form-control text-end" name="height_feet2" required="" type="number" value="5" style="color:#f1fb97; caret-color:#d1f5ac;" />
+                                        <input class="form-control text-end" name="height_feet2" required=""
+                                            type="number" value="5" style="color:#f1fb97; caret-color:#d1f5ac;" />
                                         <span class="btn ms-1 bg-green text-nowrap">ft</span>
-                                        <input class="form-control text-end ms-2" name="height_inches2" required="" type="number" value="10" style="color:#f1fb97; caret-color:#d1f5ac;" />
+                                        <input class="form-control text-end ms-2" name="height_inches2" required=""
+                                            type="number" value="10" style="color:#f1fb97; caret-color:#d1f5ac;" />
                                         <span class="btn ms-1 bg-green text-nowrap">inches</span>
                                     </div>
                                 </div>
@@ -523,8 +543,9 @@ input[type=radio]:checked:after {
                                     <h5 style="color:#f1fb97;">Weight (lbs)*</h5>
                                     <div class="d-flex align-items-center">
                                         <input class="form-control text-end" name="weight2" required="" type="number"
-                                            value="165" style="color:#f1fb97; caret-color:#d1f5ac;"/>
-                                        <span class="btn ms-1 text-nowrap bg-green" style="background: f1fb97;">lbs</span>
+                                            value="165" style="color:#f1fb97; caret-color:#d1f5ac;" />
+                                        <span class="btn ms-1 text-nowrap bg-green"
+                                            style="background: f1fb97;">lbs</span>
                                     </div>
                                 </div>
                             </div>
@@ -572,12 +593,12 @@ input[type=radio]:checked:after {
                                         </div>
                                         <div class="col-sm-12 d-flex align-items-center">
                                             <input id="Revised_Harris_Benedict" name="formula" required="" type="radio"
-                                                value="1" class="imperial-checkbox"/>
+                                                value="1" class="imperial-checkbox" />
                                             <label class="ms-2">Revised Harris-Benedict</label>
                                         </div>
                                         <div class="col-sm-12 d-flex align-items-center">
-                                            <input id="Katch_McArdle" name="formula" required="" type="radio"
-                                                value="2" class="imperial-checkbox" />
+                                            <input id="Katch_McArdle" name="formula" required="" type="radio" value="2"
+                                                class="imperial-checkbox" />
                                             <label class="ms-2">Katch-McArdle</label>
                                         </div>
                                     </div>
@@ -589,12 +610,16 @@ input[type=radio]:checked:after {
                         <div class="ans2_calculate"></div>
                     </div>
                     <div class="text-center mt-4 card-footer">
-                        <button class="btn" style="background-color: #f1fb97; border-color: #f1fb97; transition: background-color 0.3s, border-color 0.3s;" onmouseover="this.style.backgroundColor='#e1f46b'; this.style.borderColor='#e1f46b';" onmouseout="this.style.backgroundColor='#f1fb97'; this.style.borderColor='#f1fb97';" onclick="calculateCalorie2(this)" type="button">
+                        <button class="btn"
+                            style="background-color: #f1fb97; border-color: #f1fb97; transition: background-color 0.3s, border-color 0.3s;"
+                            onmouseover="this.style.backgroundColor='#e1f46b'; this.style.borderColor='#e1f46b';"
+                            onmouseout="this.style.backgroundColor='#f1fb97'; this.style.borderColor='#f1fb97';"
+                            onclick="calculateCalorie2(this)" type="button">
                             <i class="fas fa-calculator me-3"></i>
                             Calculate
                         </button>
                     </div>
-                    
+
 
                 </div>
             </form>
@@ -606,14 +631,14 @@ input[type=radio]:checked:after {
         <!-- Project Section -->
         <div class="w3-content w3-center w3-text-grey w3-padding-64" id="about">
             <h4 class="text-center card-header mb-4">Frequently Asked Questions</h4>
-            <p style="color: white">
+            <p style="color: grey; text-align: left;">
                 **Note: Any advice / tips should be followed after further research and findings may VARY. Remember,
                 these answers provide general guidance, and it's always a good idea to consult with a healthcare
                 professional or a certified fitness trainer for personalized advice based on your specific circumstances
                 and goals.**
             </p>
-            <h3 class="my-heading">What is BMI?</h2>
-                <p style="color: white">
+            <h3 class="my-heading" style="margin-top: 40px;">What is BMI?</h2>
+                <p style="color: white; text-align: left; margin-top: 30px; margin-bottom: 30px;">
                     <h7 class="my-heading-1">BMI</h7> stands for <h7 class="my-heading-1">Body Mass Index.</h7> It is a
                     measurement that is commonly used to assess whether an individual has a healthy body weight in
                     relation to their height. BMI is calculated by dividing a person's weight in kilograms by the square
@@ -627,23 +652,42 @@ input[type=radio]:checked:after {
                     a person is underweight, normal weight, overweight, or obese. Here are the standard BMI categories:
                     <br>
                     <br>
-                    <h7 class="my-heading-1">Underweight:</h7> BMI below 18.5
-                    <br>
-                    <h7 class="my-heading-1">Normal weight:</h7> BMI between 18.5 and 24.9
-                    <br>
-                    <h7 class="my-heading-1">Overweight:</h7> BMI between 25 and 29.9
-                    <br>
-                    <h7 class="my-heading-1">Obese:</h7> BMI of 30 or higher
-                    <br>
-                    <br>
-                    While BMI can be a useful initial assessment tool for determining weight status, it has limitations.
-                    It does not take into account factors such as muscle mass, bone density, and distribution of body
-                    fat, which can affect an individual's overall health. Therefore, it's important to consider other
-                    measurements and consult with a healthcare professional for a comprehensive evaluation of health and
-                    weight.
+                <table>
+                    <tr>
+                        <th style="color: #000000; background-color: #dddddd;">Category</th>
+                        <td style="color: #000000; background-color: #dddddd;">BMI Range</td>
+                    </tr>
+                    <tr>
+                        <th style="color: rgb(254, 200, 200);">Underweight</th>
+                        <td style="color: rgb(254, 200, 200);">BMI below 18.5</td>
+                    </tr>
+                    <tr>
+                        <th style="color: #c7f39a;">Normal weight</th>
+                        <td style="color: #c7f39a;">BMI between 18.5 and 24.9</td>
+                    </tr>
+                    <tr>
+                        <th style="color: rgb(146, 146, 255);">Overweight</th>
+                        <td style="color: rgb(146, 146, 255);">BMI between 25 and 29.9</td>
+                    </tr>
+                    <tr>
+                        <th style="color: rgb(254, 144, 144);">Obese</th>
+                        <td style="color:  rgb(254, 144, 144);">BMI of 30 or higher</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <p style="color: white; text-align: left; margin-bottom: 30px;">
+                While BMI can be a useful initial assessment tool for determining weight status, it has limitations.
+                It does not take into account factors such as muscle mass, bone density, and distribution of body
+                fat, which can affect an individual's overall health. Therefore, it's important to consider other
+                measurements and consult with a healthcare professional for a comprehensive evaluation of health and
+                weight.
                 </p>
+                </p>
+
                 <h3 class="my-heading">What is BMR and What do the different formulas mean?</h2>
-                    <p style="color: white">Mifflin St Jeor, Revised Harris-Benedict, and Katch-McArdle are formulas
+                    <p style="color: white; text-align: left; margin-top: 30px; margin-bottom: 30px;">Mifflin St Jeor,
+                        Revised Harris-Benedict, and Katch-McArdle are formulas
                         that help scientists estimate how much energy our bodies need to perform basic functions. We
                         call this energy Basal Metabolic Rate or BMR.
 
@@ -681,7 +725,7 @@ input[type=radio]:checked:after {
 
 
                     <h3 class="my-heading">How often should one workout?</h2>
-                        <p style="color: white">
+                        <p style="color: white; text-align: left; margin-top: 30px; margin-bottom: 30px;">
                             The <h7 class="my-heading-1">frequency of your exercise depends on your goals and fitness
                                 level.
                             </h7> For general health benefits, aim for at least 150 minutes of moderate-intensity
@@ -691,7 +735,7 @@ input[type=radio]:checked:after {
                             training exercises two or more days a week.
                         </p>
                         <h3 class="my-heading">Cardio or Strength Training?</h2>
-                            <p style="color: white">
+                            <p style="color: white; text-align: left; margin-top: 30px; margin-bottom: 30px;">
                                 <h7 class="my-heading-1">Both </h7>cardio and strength training are important for
                                 overall
                                 fitness. Cardio exercises like running, swimming, or cycling improve cardiovascular
@@ -703,7 +747,7 @@ input[type=radio]:checked:after {
                                 training.
                             </p>
                             <h3 class="my-heading">Can fat loss be targetted to specific areas?</h2>
-                                <p style="color: white">
+                                <p style="color: white; text-align: left; margin-top: 30px; margin-bottom: 30px;">
                                     Spot reduction, the idea of losing fat in specific areas, is a<h7
                                         class="my-heading-1">
                                         myth.</h7> When you lose weight, you generally lose it from your entire body
@@ -720,7 +764,7 @@ input[type=radio]:checked:after {
         </div>
         <div class="w3-content w3-center w3-text-grey w3-padding-64" id="workoutplan">
             <h4 class="text-center card-header mb-4">Sample Workout Plans</h4>
-            <p style="color: white">
+            <p style="color: white; text-align: left;">
                 The workouts are organized by muscle groups and can be combined with other workouts to make a full
                 routine. (For example: Arms 1 and Back 3 can be a Back and Arm day with 3 workouts from Arms 1 and 3
                 workouts from Back 3)
