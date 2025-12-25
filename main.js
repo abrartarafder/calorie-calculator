@@ -30,7 +30,7 @@ function calculateCalorie(obj)
         ret = (ret*4.1868);
     }
 
-    document.querySelector(".ans_calculate").innerHTML = '<div class="container"><h4 class="text-center form-control my-3" style="color:#FFB775;">You should ROUGHLY consume <span class="text-white">'+Math.ceil(ret)+' '+unit+'/day </span> to maintain your weight. Anything above that will increase your weight and anything below it will decrease your weight</h4></div>';
+    document.querySelector(".ans_calculate").innerHTML = '<div class="container"><h4 class="text-center form-control my-3" style="color:#FFB775;">You should ROUGHLY consume <span class="text-white">'+Math.ceil(ret)+' '+unit+'/day </span> to maintain your weight. Anything <span class="text-white">above that</span> will <span class="text-white">increase</span> your weight and anything <span class="text-white">below that</span> will <span class="text-white">decrease</span> your weight</h4></div>';
 
 }
 
@@ -112,7 +112,7 @@ function calculateCalorie2(obj) {
         ret = (ret * 4.1868);
     }
 
-    document.querySelector(".ans2_calculate").innerHTML = '<div class="container"><h4 class="text-center form-control my-3" style="color:#f1fb97;">You should ROUGHLY consume <span class="text-white">' + Math.ceil(ret) + ' ' + unit + '/day </span> to maintain your weight. Anything above that will increase your weight and anything below it will decrease your weight</h4></div>';
+    document.querySelector(".ans2_calculate").innerHTML = '<div class="container"><h4 class="text-center form-control my-3" style="color:#f1fb97;">You should ROUGHLY consume <span class="text-white">' + Math.ceil(ret) + ' ' + unit + '/day </span> to maintain your weight. Anything <span class="text-white">above that </span> will <span class="text-white">increase</span> your weight and anything <span class="text-white">below that</span> will <span class="text-white">decrease</span> your weight</h4></div>';
 }
 
 function Mifflin(gender, age, bodyFat, height, weight)

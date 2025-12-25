@@ -50,6 +50,7 @@
         background: -webkit-linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
         background: linear-gradient(0deg, rgba(77, 65, 34, 1) 29%, rgba(103, 31, 2, 1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4d4122", endColorstr="#671f02", GradientType=1);
+    
     }
 
     .w3-hover-FFB775:hover {
@@ -306,7 +307,8 @@
 <body class="w3-black">
 
     <!-- Icon Bar (Sidebar - hidden on small screens) -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"
+    style="display: flex; flex-direction: column; justify-content: center;">
         <a href="#calorie-calc" class="w3-bar-item w3-button w3-padding-large  w3-hover-FFB775">
             <i class="fa fa-calculator w3-xxlarge"></i>
             <br>
@@ -646,10 +648,10 @@
 
                     The formula for calculating BMI is as follows:
 
-                    BMI = weight (kg) / height^2 (m^2)
+                    BMI = weight in kilograms / (height in meters)<sup>2</sup>.
 
                     The resulting number from the calculation is then categorized into different ranges to determine if
-                    a person is underweight, normal weight, overweight, or obese. Here are the standard BMI categories:
+                    a person is underweight, healthy or normal weight, overweight, or obese. Here are the standard BMI categories:
                     <br>
                     <br>
                 <table>
@@ -662,7 +664,7 @@
                         <td style="color: rgb(254, 200, 200);">BMI below 18.5</td>
                     </tr>
                     <tr>
-                        <th style="color: #c7f39a;">Normal weight</th>
+                        <th style="color: #c7f39a;">Healthy weight</th>
                         <td style="color: #c7f39a;">BMI between 18.5 and 24.9</td>
                     </tr>
                     <tr>
@@ -685,11 +687,13 @@
                 </p>
                 </p>
 
-                <h3 class="my-heading">What is BMR and What do the different formulas mean?</h2>
-                    <p style="color: white; text-align: left; margin-top: 30px; margin-bottom: 30px;">Mifflin St Jeor,
-                        Revised Harris-Benedict, and Katch-McArdle are formulas
-                        that help scientists estimate how much energy our bodies need to perform basic functions. We
-                        call this energy Basal Metabolic Rate or BMR.
+                <h3 class="my-heading">How Does BMI Relate to BMR? What do the BMR Formula's mean? </h2>
+                    <p style="color: white; text-align: left; margin-top: 30px; margin-bottom: 30px;">
+                        BMI and BMR are related but measure different aspects of health. BMI helps estimate whether a person’s body weight is within a healthy range based on height, while BMR estimates how much energy the body needs to perform basic life-sustaining functions. Together, BMI provides insight into weight status, and BMR helps determine daily energy and calorie needs.
+                        <br><br>
+                      
+                        Mifflin St Jeor, Revised Harris-Benedict, and Katch-McArdle are formulas that help scientists estimate how much energy our bodies need to perform basic functions. This energy is called <h7 class="my-heading-1">Basal Metabolic Rate (BMR)</h7>.
+                        <br><br>
 
                         Think of your body like a machine that's always running, even when you're not doing anything.
                         Just like a car needs fuel to run, your body needs energy to keep working properly.<h7
